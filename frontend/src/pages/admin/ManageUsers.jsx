@@ -8,6 +8,11 @@ import toast from 'react-hot-toast';
 
 const ManageUsers = () => {
   const { user: currentUser } = useAuth();
+  const getBackendBaseUrl = () => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    return apiUrl.endsWith('/api') ? apiUrl.slice(0, -4) : apiUrl;
+  };
+  const backendBaseUrl = getBackendBaseUrl();
   
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -191,7 +196,7 @@ const ManageUsers = () => {
                       <td className="px-6 py-4 flex items-center gap-3">
                         {user.avatar ? (
                           <img 
-                            src={user.avatar} 
+                            src={user.avatar.startsWith('/uploads') ? `${backendBaseUrl}${user.avatar}` : user.avatar} 
                             alt="avatar" 
                             className="h-9 w-9 rounded-lg object-cover ring-2 ring-slate-100 dark:ring-darkbg-700" 
                           />

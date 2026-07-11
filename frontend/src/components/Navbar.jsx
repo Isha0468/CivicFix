@@ -7,6 +7,11 @@ import api from '../services/api';
 const Navbar = ({ onMenuToggle }) => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
+  const getBackendBaseUrl = () => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    return apiUrl.endsWith('/api') ? apiUrl.slice(0, -4) : apiUrl;
+  };
+  const backendBaseUrl = getBackendBaseUrl();
   
   const [dark, setDark] = useState(localStorage.getItem('theme') === 'dark');
   const [showNotifications, setShowNotifications] = useState(false);
@@ -208,7 +213,7 @@ const Navbar = ({ onMenuToggle }) => {
                   >
                     {user.avatar ? (
                       <img
-                        src={user.avatar}
+                        src={user.avatar.startsWith('/uploads') ? `${backendBaseUrl}${user.avatar}` : user.avatar}
                         alt="User avatar"
                         className="h-8 w-8 rounded-lg object-cover ring-2 ring-brand-500/10"
                       />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Lock, ShieldAlert, ArrowLeft, KeyRound } from 'lucide-react';
-import axios from 'axios';
+import api from '../services/api';
 import toast from 'react-hot-toast';
 
 const ResetPassword = () => {
@@ -20,8 +20,6 @@ const ResetPassword = () => {
 
   const passwordValue = watch('password');
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-
   // Load token from url search parameters if present
   useEffect(() => {
     const urlToken = searchParams.get('token');
@@ -33,7 +31,7 @@ const ResetPassword = () => {
   const onSubmit = async (data) => {
     setSubmitting(true);
     try {
-      const response = await axios.post(`${API_URL}/auth/reset-password`, {
+      const response = await api.post('/auth/reset-password', {
         token: data.token,
         newPassword: data.password
       });

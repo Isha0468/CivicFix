@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, ShieldAlert, ArrowLeft, Key, Clipboard, Check } from 'lucide-react';
-import axios from 'axios';
+import api from '../services/api';
 import toast from 'react-hot-toast';
 
 const ForgotPassword = () => {
@@ -15,12 +15,10 @@ const ForgotPassword = () => {
     defaultValues: { email: '' }
   });
 
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
-
   const onSubmit = async (data) => {
     setSubmitting(true);
     try {
-      const response = await axios.post(`${API_URL}/auth/forgot-password`, { email: data.email });
+      const response = await api.post('/auth/forgot-password', { email: data.email });
       if (response.data.success) {
         setResetToken(response.data.resetToken);
         toast.success('Reset link generated!');

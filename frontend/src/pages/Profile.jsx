@@ -6,6 +6,11 @@ import toast from 'react-hot-toast';
 
 const Profile = () => {
   const { user, updateProfile, updateAvatar } = useAuth();
+  const getBackendBaseUrl = () => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    return apiUrl.endsWith('/api') ? apiUrl.slice(0, -4) : apiUrl;
+  };
+  const backendBaseUrl = getBackendBaseUrl();
   const [avatarLoading, setAvatarLoading] = useState(false);
   const [profileLoading, setProfileLoading] = useState(false);
 
@@ -76,7 +81,7 @@ const Profile = () => {
           <div className="relative group">
             {user.avatar ? (
               <img
-                src={user.avatar}
+                src={user.avatar.startsWith('/uploads') ? `${backendBaseUrl}${user.avatar}` : user.avatar}
                 alt="Avatar avatar"
                 className="h-28 w-28 rounded-2xl object-cover ring-4 ring-brand-500/10 shadow-lg"
               />

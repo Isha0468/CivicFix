@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CivicFix – Report. Track. Improve.
 
 CivicFix is a production-ready, full-stack civic issue reporting and resolution platform. It connects Citizens, Municipal Officers, and Administrators to facilitate transparent neighborhood improvements.
@@ -132,3 +133,7 @@ Use these credentials to log in during local evaluation (shortcuts are also prov
    - `VITE_API_URL`: Your backend API URL (e.g. `https://civicfix-api.onrender.com/api`)
 2. Build command: `npm run build`
 3. Output directory: `dist`
+=======
+# CivicFix
+CivicFix is a full-stack MERN civic issue reporting and management platform that enables citizens to report local issues, municipal officers to resolve them, and administrators to manage complaints through a transparent, role-based workflow.
+>>>>>>> f6869562b8e1738f3f6817cdd556d8751838c368

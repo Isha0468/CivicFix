@@ -11,6 +11,11 @@ const ComplaintDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const getBackendBaseUrl = () => {
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+    return apiUrl.endsWith('/api') ? apiUrl.slice(0, -4) : apiUrl;
+  };
+  const backendBaseUrl = getBackendBaseUrl();
 
   const [complaint, setComplaint] = useState(null);
   const [comments, setComments] = useState([]);
@@ -339,12 +344,12 @@ const ComplaintDetails = () => {
                   {complaint.images.map((img, i) => (
                     <a 
                       key={i} 
-                      href={img.startsWith('/uploads') ? `http://localhost:5000${img}` : img} 
+                      href={img.startsWith('/uploads') ? `${backendBaseUrl}${img}` : img} 
                       target="_blank" 
                       rel="noreferrer"
-                      className="aspect-video rounded-xl overflow-hidden shadow border border-slate-100 dark:border-slate-850 hover:opacity-90 transition-opacity"
+                      className="aspect-video rounded-xl overflow-hidden shadow border border-slate-100 dark:border-slate-855 hover:opacity-90 transition-opacity"
                     >
-                      <img src={img.startsWith('/uploads') ? `http://localhost:5000${img}` : img} alt={`complaint attachment ${i}`} className="h-full w-full object-cover" />
+                      <img src={img.startsWith('/uploads') ? `${backendBaseUrl}${img}` : img} alt={`complaint attachment ${i}`} className="h-full w-full object-cover" />
                     </a>
                   ))}
                 </div>
@@ -386,7 +391,7 @@ const ComplaintDetails = () => {
                     <div key={comment._id} className="flex gap-3 text-sm">
                       {comment.user?.avatar ? (
                         <img
-                          src={comment.user.avatar}
+                          src={comment.user.avatar.startsWith('/uploads') ? `${backendBaseUrl}${comment.user.avatar}` : comment.user.avatar}
                           alt={comment.user?.name}
                           className="h-8 w-8 rounded-lg object-cover ring-2 ring-slate-100 dark:ring-darkbg-700 shrink-0"
                         />
@@ -491,12 +496,12 @@ const ComplaintDetails = () => {
                         {item.images.map((tImg, idx) => (
                           <a 
                             key={idx} 
-                            href={tImg.startsWith('/uploads') ? `http://localhost:5000${tImg}` : tImg} 
+                            href={tImg.startsWith('/uploads') ? `${backendBaseUrl}${tImg}` : tImg} 
                             target="_blank" 
                             rel="noreferrer"
                             className="h-10 w-16 rounded overflow-hidden border border-slate-200 dark:border-slate-800 shrink-0"
                           >
-                            <img src={tImg.startsWith('/uploads') ? `http://localhost:5000${tImg}` : tImg} alt="timeline progress" className="h-full w-full object-cover" />
+                            <img src={tImg.startsWith('/uploads') ? `${backendBaseUrl}${tImg}` : tImg} alt="timeline progress" className="h-full w-full object-cover" />
                           </a>
                         ))}
                       </div>

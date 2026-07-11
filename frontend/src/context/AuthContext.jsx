@@ -1,24 +1,19 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import toast from 'react-hot-toast';
 
 const AuthContext = createContext(null);
-
-// Configure backend base URL
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token') || '');
   const [loading, setLoading] = useState(true);
 
-  // Sync token to Axios header
+  // Sync token to LocalStorage
   useEffect(() => {
     if (token) {
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
       localStorage.setItem('token', token);
     } else {
-      delete axios.defaults.headers.common['Authorization'];
       localStorage.removeItem('token');
       localStorage.removeItem('user');
     }
@@ -38,7 +33,7 @@ export const AuthProvider = ({ children }) => {
         }
 
         // Fetch fresh profile from API to ensure sync
-        const response = await axios.get(`${API_URL}/auth/profile`);
+        const response = await api.get('/auth/profile');
         if (response.data.success) {
           setUser(response.data.user);
           localStorage.setItem('user', JSON.stringify(response.data.user));
@@ -58,7 +53,7 @@ export const AuthProvider = ({ children }) => {
   // Login handler
   const login = async (email, password) => {
     try {
-      const response = await axios.post(`${API_URL}/auth/login`, { email, password });
+      const response = await api.post('/auth/login', { email, password });
       if (response.data.success) {
         const { token: userToken, user: userData } = response.data;
         setToken(userToken);
@@ -77,7 +72,7 @@ export const AuthProvider = ({ children }) => {
   // Register handler
   const register = async (name, email, password, phone) => {
     try {
-      const response = await axios.post(`${API_URL}/auth/register`, { name, email, password, phone });
+      const response = await api.post('/auth/register', { name, email, password, phone });
       if (response.data.success) {
         const { token: userToken, user: userData } = response.data;
         setToken(userToken);
@@ -99,7 +94,7 @@ export const AuthProvider = ({ children }) => {
       const body = { name, phone };
       if (password) body.password = password;
 
-      const response = await axios.put(`${API_URL}/auth/profile`, body);
+      const response = await api.put('/auth/profile', body);
       if (response.data.success) {
         const updated = response.data.user;
         // Merge avatar from active state since endpoint doesn't change it
@@ -122,7 +117,7 @@ export const AuthProvider = ({ children }) => {
       const formData = new FormData();
       formData.append('avatar', file);
 
-      const response = await axios.post(`${API_URL}/auth/avatar`, formData, {
+      const response = await api.post('/auth/avatar', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
 
