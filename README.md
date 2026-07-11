@@ -1,139 +1,293 @@
-<<<<<<< HEAD
-# CivicFix – Report. Track. Improve.
+<div align="center">
 
-CivicFix is a production-ready, full-stack civic issue reporting and resolution platform. It connects Citizens, Municipal Officers, and Administrators to facilitate transparent neighborhood improvements.
+# 🏙️ CivicFix
+
+### **Report. Track. Improve.**
+
+A production-ready **MERN Stack Civic Issue Reporting Platform** that enables citizens to report civic issues, municipal officers to resolve them, and administrators to monitor city-wide operations through a centralized dashboard.
+
+<p align="center">
+  <a href="https://civicfix-frontend-8uf6.onrender.com"><img src="https://img.shields.io/badge/🚀 Live Demo-2ea44f?style=for-the-badge" /></a>
+  <a href="https://github.com/Isha0468/CivicFix"><img src="https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github" /></a>
+</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
+<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
+<img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white"/>
+<img src="https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=black"/>
+</p>
+
+</div>
 
 ---
 
-## Folder Structure
+# 📖 Overview
 
-```text
-CivicFix/
-├── backend/
-│   ├── src/
-│   │   ├── config/          # Database & Storage configs
-│   │   ├── controllers/     # Route business logic controllers
-│   │   ├── middleware/      # Auth security & Input validators
-│   │   ├── models/          # Mongoose database collections schemas
-│   │   ├── routes/          # API route bindings
-│   │   ├── services/        # Mock AI logic & helper services
-│   │   └── server.js        # Server entry files
-│   ├── .env.example
-│   ├── .env
+**CivicFix** is a full-stack civic issue management platform that bridges the gap between **Citizens**, **Municipal Officers**, and **Administrators**.
+
+Users can report civic problems such as potholes, garbage collection issues, water leakage, streetlight failures, and more. Officers manage and resolve complaints while administrators monitor city-wide operations through an analytics dashboard.
+
+---
+
+# 🚀 Live Demo
+
+### 🌐 Frontend
+
+https://civicfix-frontend-8uf6.onrender.com
+
+### ⚙️ Backend API
+
+https://civicfix-4ty0.onrender.com
+
+---
+
+# ✨ Features
+
+### 👨 Citizen
+
+- 📝 Register & Login
+- 📍 Report civic complaints
+- 🖼 Upload complaint images
+- 🗺 Pin complaint location on map
+- 📊 Track complaint status
+- 📜 Complaint history
+- 🤖 AI-assisted category suggestions
+
+---
+
+### 👮 Municipal Officer
+
+- 📋 View assigned complaints
+- 🔄 Update complaint status
+- 💬 Add resolution remarks
+- 📷 View uploaded evidence
+- 📍 Location-aware complaint management
+
+---
+
+### 👨‍💼 Administrator
+
+- 👥 User Management
+- 🏙 Complaint Monitoring
+- 📈 Analytics Dashboard
+- 📊 Statistics & Reports
+- ⚙ System Management
+
+---
+
+# 🏗️ System Architecture
+
+```
+Citizen
+      │
+      ▼
+ React Frontend
+      │
+ Axios API
+      │
+      ▼
+Express Backend
+      │
+JWT Authentication
+      │
+      ▼
+MongoDB Atlas
+      │
+Cloudinary
+(Image Storage)
+```
+
+---
+
+# 🛠 Tech Stack
+
+| Category | Technologies |
+|-----------|--------------|
+| 🎨 Frontend | React, Vite, Tailwind CSS, React Router, Axios |
+| ⚙ Backend | Node.js, Express.js |
+| 🗄 Database | MongoDB Atlas, Mongoose |
+| 🔐 Authentication | JWT, BCrypt |
+| ☁ Storage | Cloudinary |
+| 🗺 Maps | Leaflet, React Leaflet |
+| 📊 Charts | Chart.js |
+| 🚀 Deployment | Render |
+
+---
+
+# 📂 Project Structure
+
+```
+CivicFix
+│
+├── backend
+│   ├── src
+│   │   ├── config
+│   │   ├── controllers
+│   │   ├── middleware
+│   │   ├── models
+│   │   ├── routes
+│   │   ├── services
+│   │   └── server.js
 │   └── package.json
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # Reusable map widgets, cards, dialogs
-│   │   ├── context/         # Auth provider contexts
-│   │   ├── pages/           # Citizens, Officers, and Admins screens
-│   │   ├── services/        # Axios api client interceptors
-│   │   └── App.jsx          # Route guards
-│   ├── tailwind.config.js
-│   ├── index.html
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── context
+│   │   ├── pages
+│   │   ├── services
+│   │   └── App.jsx
 │   └── package.json
+│
 └── README.md
 ```
 
 ---
 
-## Tech Stack
+# 🔐 Demo Credentials
 
-- **Frontend**: React (Vite), Tailwind CSS v3, React Router DOM, Axios, Leaflet, React Leaflet, Chart.js, Lucide React
-- **Backend**: Node.js, Express.js, MongoDB, Mongoose, Multer
-- **Security**: JSON Web Tokens (JWT), BCrypt, Helmet, CORS, Express Rate Limit, Express Validator
-- **Image Storage**: Cloudinary (with local disk uploads fallback)
+## 👨 Administrator
 
----
+Email
 
-## Installation & Running Locally
+```
+admin@civicfix.com
+```
 
-### Prerequisites
-- Node.js (v18+)
-- MongoDB running locally on `mongodb://127.0.0.1:27017/civicfix` (or an Atlas connection string)
+Password
 
-### 1. Backend Setup
-
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Initialize the environment variables:
-   Copy `.env.example` to `.env` (preconfigured with local fallbacks):
-   ```bash
-   cp .env.example .env
-   ```
-4. **Seed the database**:
-   Run the seeder script to populate default categories, test accounts, and issues:
-   ```bash
-   npm run seed
-   ```
-5. Start the backend developer server:
-   ```bash
-   npm run dev
-   ```
-   *The server starts on: http://localhost:5000*
-
-### 2. Frontend Setup
-
-1. Navigate to the frontend directory:
-   ```bash
-   cd ../frontend
-   ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the Vite React development server:
-   ```bash
-   npm run dev
-   ```
-   *The client starts on: http://localhost:5173*
+```
+admin123
+```
 
 ---
 
-## Demo Credentials (Pre-seeded)
+## 👮 Officer
 
-Use these credentials to log in during local evaluation (shortcuts are also provided on the Login page):
+Email
 
-- **Citizen**: `citizen@civicfix.com` / `citizen123`
-- **Municipal Officer**: `officer@civicfix.com` / `officer123` (District: Downtown Sector A)
-- **Administrator**: `admin@civicfix.com` / `admin123`
+```
+officer@civicfix.com
+```
 
----
+Password
 
-## AI Features & Image Uploads Fallback
-
-1. **AI Image Auto-Categorizer & Severity**:
-   - Analyzes complaint titles/descriptions for keywords to suggest categories and tag urgency.
-2. **AI Suggested Templates**:
-   - Provides title/description fill suggestions for chosen categories.
-3. **Duplicate Geofence Checks**:
-   - Runs MongoDB `$nearSphere` queries to check if another citizen already reported a similar complaint in a 150m radius.
-4. **Storage Fallback**:
-   - If Cloudinary credentials are not defined in backend `.env`, files are automatically saved to `backend/uploads` and served statically.
+```
+officer123
+```
 
 ---
 
-## Deployment Guide
+## 👤 Citizen
 
-### Backend (Render / Heroku)
-1. Add environment variables on the provider dashboard:
-   - `MONGODB_URI`: MongoDB Atlas string
-   - `JWT_SECRET`: Random hash key
-   - `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_API_KEY`, `CLOUDINARY_API_SECRET`
-2. Build commands: `npm install`
-3. Start commands: `npm start`
+Email
 
-### Frontend (Vercel / Netlify)
-1. Set the Environment Variable:
-   - `VITE_API_URL`: Your backend API URL (e.g. `https://civicfix-api.onrender.com/api`)
-2. Build command: `npm run build`
-3. Output directory: `dist`
-=======
-# CivicFix
-CivicFix is a full-stack MERN civic issue reporting and management platform that enables citizens to report local issues, municipal officers to resolve them, and administrators to manage complaints through a transparent, role-based workflow.
->>>>>>> f6869562b8e1738f3f6817cdd556d8751838c368
+```
+citizen@civicfix.com
+```
+
+Password
+
+```
+citizen123
+```
+
+---
+
+# ⚡ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/Isha0468/CivicFix.git
+```
+
+---
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+---
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+# 🌍 Environment Variables
+
+### Backend
+
+```env
+PORT=
+MONGODB_URI=
+JWT_SECRET=
+CLOUDINARY_CLOUD_NAME=
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+```
+
+### Frontend
+
+```env
+VITE_API_URL=
+```
+
+---
+
+# 🔒 Security Features
+
+- 🔐 JWT Authentication
+- 🔑 BCrypt Password Hashing
+- 🛡 Helmet Security
+- 🌐 CORS Protection
+- 🚦 Express Rate Limiting
+- ✅ Input Validation
+- 🔒 Protected Routes
+
+---
+
+# 📊 Future Enhancements
+
+- 📱 Mobile Application
+- 🔔 Push Notifications
+- 🤖 AI Complaint Prioritization
+- 📈 Advanced Analytics
+- 📧 Email Notifications
+- 🌍 Multi-language Support
+
+---
+
+# 👩‍💻 Developer
+
+**Isha**
+
+GitHub
+
+https://github.com/Isha0468
+
+---
+
+<div align="center">
+
+### ⭐ If you found this project helpful, don't forget to Star the repository!
+
+Made with ❤️ using the MERN Stack
+
+</div>
