@@ -4,7 +4,7 @@
 
 ### **Report. Track. Improve.**
 
-A production-ready **MERN Stack Civic Issue Reporting Platform** that enables citizens to report civic issues, municipal officers to resolve them, and administrators to monitor city-wide operations through a centralized dashboard.
+A production-ready **MERN Stack Civic Issue Reporting Platform** that enables citizens to report civic issues, municipal officers to manage and resolve complaints, and administrators to monitor city-wide operations through a centralized dashboard.
 
 <p align="center">
   <a href="https://civicfix-frontend-8uf6.onrender.com"><img src="https://img.shields.io/badge/🚀 Live Demo-2ea44f?style=for-the-badge" /></a>
@@ -12,15 +12,16 @@ A production-ready **MERN Stack Civic Issue Reporting Platform** that enables ci
 </p>
 
 <p align="center">
-<img src="https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black"/>
-<img src="https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white"/>
-<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white"/>
-<img src="https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white"/>
-<img src="https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white"/>
-<img src="https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white"/>
-<img src="https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white"/>
-<img src="https://img.shields.io/badge/Cloudinary-3448C5?style=flat-square&logo=cloudinary&logoColor=white"/>
-<img src="https://img.shields.io/badge/Render-46E3B7?style=flat-square&logo=render&logoColor=black"/>
+
+<img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+<img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+<img src="https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"/>
+<img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white"/>
+<img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white"/>
+<img src="https://img.shields.io/badge/Render-46E3B7?style=for-the-badge&logo=render&logoColor=black"/>
+
 </p>
 
 </div>
@@ -29,9 +30,9 @@ A production-ready **MERN Stack Civic Issue Reporting Platform** that enables ci
 
 # 📖 Overview
 
-**CivicFix** is a full-stack civic issue management platform that bridges the gap between **Citizens**, **Municipal Officers**, and **Administrators**.
+**CivicFix** is a modern full-stack civic issue management platform developed using the **MERN Stack**.
 
-Users can report civic problems such as potholes, garbage collection issues, water leakage, streetlight failures, and more. Officers manage and resolve complaints while administrators monitor city-wide operations through an analytics dashboard.
+The platform enables citizens to report civic issues such as potholes, garbage collection problems, water leakage, damaged streetlights, and other municipal concerns. Municipal officers can manage and resolve complaints, while administrators oversee platform operations through a centralized dashboard.
 
 ---
 
@@ -49,58 +50,58 @@ https://civicfix-4ty0.onrender.com
 
 # ✨ Features
 
-### 👨 Citizen
+## 👤 Citizen
 
-- 📝 Register & Login
-- 📍 Report civic complaints
-- 🖼 Upload complaint images
-- 🗺 Pin complaint location on map
-- 📊 Track complaint status
-- 📜 Complaint history
-- 🤖 AI-assisted category suggestions
-
----
-
-### 👮 Municipal Officer
-
-- 📋 View assigned complaints
-- 🔄 Update complaint status
-- 💬 Add resolution remarks
-- 📷 View uploaded evidence
-- 📍 Location-aware complaint management
+- 📝 Secure Registration & Login
+- 📍 Report Civic Issues
+- 🖼 Upload Complaint Images
+- 🗺 Select Issue Location using Interactive Maps
+- 📊 Track Complaint Status
+- 📜 View Complaint History
+- ✏ Edit Submitted Complaints
 
 ---
 
-### 👨‍💼 Administrator
+## 👮 Municipal Officer
+
+- 🔐 Secure Login
+- 📋 View Assigned Complaints
+- 🔄 Update Complaint Status
+- 💬 Add Resolution Remarks
+- 📍 Manage Complaints within Assigned Area
+- 📈 Dashboard Overview
+
+---
+
+## 👨‍💼 Administrator
 
 - 👥 User Management
-- 🏙 Complaint Monitoring
-- 📈 Analytics Dashboard
-- 📊 Statistics & Reports
-- ⚙ System Management
+- 📊 Dashboard Analytics
+- 🏙 Monitor Complaints
+- 📈 System Statistics
+- ⚙ Platform Administration
 
 ---
 
 # 🏗️ System Architecture
 
-```
-Citizen
-      │
-      ▼
- React Frontend
-      │
- Axios API
-      │
-      ▼
-Express Backend
-      │
-JWT Authentication
-      │
-      ▼
-MongoDB Atlas
-      │
-Cloudinary
-(Image Storage)
+```text
+Citizen / Officer / Admin
+            │
+            ▼
+     React + Vite Frontend
+            │
+            ▼
+      Axios HTTP Requests
+            │
+            ▼
+     Express REST API Server
+            │
+            ▼
+JWT Authentication Middleware
+            │
+            ▼
+ MongoDB Atlas Database
 ```
 
 ---
@@ -109,11 +110,10 @@ Cloudinary
 
 | Category | Technologies |
 |-----------|--------------|
-| 🎨 Frontend | React, Vite, Tailwind CSS, React Router, Axios |
-| ⚙ Backend | Node.js, Express.js |
-| 🗄 Database | MongoDB Atlas, Mongoose |
+| 🎨 Frontend | React, Vite, Tailwind CSS, React Router DOM, Axios |
+| ⚙️ Backend | Node.js, Express.js |
+| 🗄️ Database | MongoDB Atlas, Mongoose |
 | 🔐 Authentication | JWT, BCrypt |
-| ☁ Storage | Cloudinary |
 | 🗺 Maps | Leaflet, React Leaflet |
 | 📊 Charts | Chart.js |
 | 🚀 Deployment | Render |
@@ -122,7 +122,7 @@ Cloudinary
 
 # 📂 Project Structure
 
-```
+```text
 CivicFix
 │
 ├── backend
@@ -134,6 +134,7 @@ CivicFix
 │   │   ├── routes
 │   │   ├── services
 │   │   └── server.js
+│   ├── .env
 │   └── package.json
 │
 ├── frontend
@@ -143,6 +144,7 @@ CivicFix
 │   │   ├── pages
 │   │   ├── services
 │   │   └── App.jsx
+│   ├── .env
 │   └── package.json
 │
 └── README.md
@@ -150,62 +152,27 @@ CivicFix
 
 ---
 
-# 🔐 Demo Credentials
+# 🔑 Demo Credentials
 
-## 👨 Administrator
+### 👮 Municipal Officer
 
-Email
+| Field | Value |
+|-------|-------|
+| **Email** | `officer@civicfix.com` |
+| **Password** | `officer123` |
 
-```
-admin@civicfix.com
-```
-
-Password
-
-```
-admin123
-```
+> **Note:** Additional users can be created through the application registration flow.
 
 ---
 
-## 👮 Officer
-
-Email
-
-```
-officer@civicfix.com
-```
-
-Password
-
-```
-officer123
-```
-
----
-
-## 👤 Citizen
-
-Email
-
-```
-citizen@civicfix.com
-```
-
-Password
-
-```
-citizen123
-```
-
----
-
-# ⚡ Installation
+# ⚙️ Installation
 
 ## Clone Repository
 
 ```bash
 git clone https://github.com/Isha0468/CivicFix.git
+
+cd CivicFix
 ```
 
 ---
@@ -214,7 +181,9 @@ git clone https://github.com/Isha0468/CivicFix.git
 
 ```bash
 cd backend
+
 npm install
+
 npm run dev
 ```
 
@@ -224,7 +193,9 @@ npm run dev
 
 ```bash
 cd frontend
+
 npm install
+
 npm run dev
 ```
 
@@ -232,18 +203,17 @@ npm run dev
 
 # 🌍 Environment Variables
 
-### Backend
+## Backend (.env)
 
 ```env
 PORT=
 MONGODB_URI=
 JWT_SECRET=
-CLOUDINARY_CLOUD_NAME=
-CLOUDINARY_API_KEY=
-CLOUDINARY_API_SECRET=
 ```
 
-### Frontend
+---
+
+## Frontend (.env)
 
 ```env
 VITE_API_URL=
@@ -251,25 +221,52 @@ VITE_API_URL=
 
 ---
 
-# 🔒 Security Features
+# 🔐 Security Features
 
-- 🔐 JWT Authentication
-- 🔑 BCrypt Password Hashing
-- 🛡 Helmet Security
-- 🌐 CORS Protection
-- 🚦 Express Rate Limiting
+- 🔑 JWT Authentication
+- 🔒 BCrypt Password Hashing
+- 🛡 Protected API Routes
+- 🌐 Secure CORS Configuration
 - ✅ Input Validation
-- 🔒 Protected Routes
+- 🚦 Express Rate Limiting
+- 🪖 Helmet Security
 
 ---
 
-# 📊 Future Enhancements
+# 📱 Highlights
 
-- 📱 Mobile Application
+- 📱 Fully Responsive Design
+- 🗺 Interactive Map Integration
+- 📊 Dashboard Analytics
+- 📈 Real-time Complaint Tracking
+- 🔐 Role-Based Authentication
+- ☁ MongoDB Atlas Database
+- 🚀 Fully Deployed on Render
+
+---
+
+# 📸 Screenshots
+
+> Add screenshots of the following pages:
+
+- 🏠 Landing Page
+- 🔐 Login
+- 📝 Report Complaint
+- 🗺 Map View
+- 👤 Citizen Dashboard
+- 👮 Officer Dashboard
+- 👨‍💼 Admin Dashboard
+- 📊 Analytics Dashboard
+
+---
+
+# 🎯 Future Improvements
+
 - 🔔 Push Notifications
-- 🤖 AI Complaint Prioritization
-- 📈 Advanced Analytics
 - 📧 Email Notifications
+- 📱 Mobile Application
+- 🤖 AI-based Complaint Prioritization
+- 📈 Advanced Analytics
 - 🌍 Multi-language Support
 
 ---
@@ -286,7 +283,7 @@ https://github.com/Isha0468
 
 <div align="center">
 
-### ⭐ If you found this project helpful, don't forget to Star the repository!
+## ⭐ If you found this project useful, consider giving it a Star!
 
 Made with ❤️ using the MERN Stack
 
